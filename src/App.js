@@ -34,6 +34,7 @@ function App() {
       provider: "google",
       options: {
         scopes: "https://www.googleapis.com/auth/calendar",
+        redirectTo: window.location.origin
       },
     });
     if (error) {
@@ -45,7 +46,7 @@ function App() {
   async function signOut() {
     await supabase.auth.signOut();
   }
-
+ 
   async function createCalendarEvent() {
     console.log("create calendar event");
     const event = {
