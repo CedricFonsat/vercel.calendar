@@ -42,3 +42,7 @@
   width: 55px !important;
   text-align: center;
 }
+
+.react-datepicker-wrapper{
+  width: 100% !important;
+}
