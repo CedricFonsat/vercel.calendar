@@ -20,7 +20,7 @@ const Header = ({photo , email, signOut}) => {
             <img className="h-6 w-auto" src={logo} alt="logo kalndar" />
           </div>
           <div className="flex items-center">
-            <p className="text-xl">{email}</p>
+            <p className="text-xl hidden lg:block">{email}</p>
   
                  {/* Profile dropdown */}
                  <Menu as="div" className="relative ml-3">

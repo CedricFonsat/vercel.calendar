@@ -13,7 +13,7 @@ const TopMarquee = () => {
       <p class="text-sm leading-6 text-gray-900">
         <strong class="font-semibold">Kalndar 2023</strong><svg viewBox="0 0 2 2" class="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true"><circle cx="1" cy="1" r="1" /></svg>Unlock the full potential of your time management with Kalndar Pro
       </p>
-      <a href="#" class="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">Go Pro Now <span aria-hidden="true">&rarr;</span></a>
+      <a href="#" class="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">Upgrade Pro <span aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="flex flex-1 justify-end">
       <button type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]">

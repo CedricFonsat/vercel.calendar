@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import DateTimePicker from "./DateTimePicker";
+import 'react-toastify/dist/ReactToastify.css';
 import {
     useSession
   } from "@supabase/auth-helpers-react";
+  import { toast } from 'react-toastify';
 
 const Modal = () => {
   const [start, setStart] = useState(new Date());
@@ -44,7 +46,8 @@ const Modal = () => {
       })
       .then((data) => {
         console.log(data);
-        alert("event created , cheked your google calendar");
+        toast.success("Your event has good been created");
+       // alert("event created , cheked your google calendar");
       });
   }
 

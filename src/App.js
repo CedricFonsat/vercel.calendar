@@ -15,6 +15,12 @@ import Hero from "./components/Hero";
 import DateTimePicker from "./components/DateTimePicker";
 import HeadTest from "./components/HeadTest";
 import Modal from "./components/Modal";
+import { TabsDefault } from "./components/TabsDefault";
+import ResumeCalendar from "./components/ResumeCalendar";
+import Tabs from "./components/Tabs";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Tab from "./components/Tab";
 
 function App() {
 
@@ -51,7 +57,17 @@ function App() {
   // console.log(eventName);
   //console.log(start.toISOString(), "gggggg");
 
+  const tab1 = <p className="text-black">hjbbhbbhbhbhjbj</p>;
 
+
+//   <p>
+//   Collaboratively administrate empowered markets via
+//   plug-and-play networks. Dynamically procrastinate B2C users
+//   after installed base benefits.
+//   <br />
+//   <br /> Dramatically visualize customer directed convergence
+//   without revolutionary ROI.
+// </p>
 
   return (
     <div className="App">
@@ -63,43 +79,17 @@ function App() {
             signOut={() => signOut()}
           />
           <Modal />
-          <section className="flex flex-col items-center">
+          {/* <TabsDefault/> */}
 
-            {/* <p>Start of your event</p>
-            <div className="w-2/4 h-24 flex flex-row items-center justify-center bg-indigo-500">
-              <DateTimePicker
-                onChange={setStart}
-                value={start}
-                className="custom-datetime-picker" 
-              />
-            </div>
+          <Tab/>
+          {/* <Tabs color="indigo"
+          tab1={tab1}
+          tab2={tab1}
+          tab3={<ResumeCalendar/>}
+          /> */}
 
-
-            <p>End of your event</p>
-            <div className="w-1/4">
-              <DateTimePicker
-                onChange={setEnd}
-                value={end}
-              />
-            </div> */}
-
-          
-            {/* gjvvhhh********** */}
-
-            {/* <p>Event name</p>
-            <input type="text" onChange={(e) => setEventName(e.target.value)} />
-
-            <p>Event description</p>
-            <input
-              type="text"
-              onChange={(e) => setEventDescription(e.target.value)}
-            /> */}
-
-            {/* <hr />
-            <button onClick={() => createCalendarEvent()}>
-              Create Calendar Event
-            </button> */}
-          </section>
+          {/* <section className="flex flex-col items-center"> */}
+          <ToastContainer />
         </>
       ) : (
         <>
