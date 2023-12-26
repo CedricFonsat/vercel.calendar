@@ -16,6 +16,28 @@ const Modal = () => {
 
   const session = useSession();
 
+  const CAL_ID = "227249538608-rh71qfhri55viciun9i7250cokd5dnmr.apps.googleusercontent.com"
+  const CAL_API = "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"
+
+  const BASEPARAMS = `orderBy=startTime&singleEvents=true&timeMin=${new Date().toISOString()}`
+  const BASEURL = `https://www.googleapis.com/calendar/v3/calendars/${CAL_ID}/events?${BASEPARAMS}`
+
+  const finalUrl = `${BASEURL}&key=${CAL_API}`
+  const HEADERS = {
+    'Content-Type' : 'application/json',
+    'Access-Control-Allow-Methods': 'GET'
+  }
+
+  async function getEvent(){
+    await fetch(finalUrl)
+        .then((response) => response.json())
+        .then((data) => ({
+            statusCode: 200,
+            body: JSON.stringify(data.items,null,2),
+            HEADERS
+        }));
+  }
+
   async function createCalendarEvent() {
     console.log("create calendar event");
     const event = {
@@ -103,15 +125,14 @@ const Modal = () => {
             </div>
             <div className="max-w-sm mx-auto space-y-3 text-center ">
               <Dialog.Title className="text-lg font-medium text-gray-800 ">
-                Sign up for our newsletter
+                Add Google Event
               </Dialog.Title>
-
-              <Dialog.Description className=" text-sm text-gray-600">
+              {/* <Dialog.Description className=" text-sm text-gray-600">
                 <p>
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
-              </Dialog.Description>
+              </Dialog.Description> */}
               <fieldset className="Fieldset relative">
                 <svg
                   className="w-6 h-6 text-gray-400 absolute left-3 inset-y-0 my-auto"

@@ -1,6 +1,7 @@
 import * as Tabs from "@radix-ui/react-tabs";
 import { useState } from "react";
 import ResumeCalendar from "./ResumeCalendar";
+import Events from "./Events";
 
 const Tab = () => {
   const [selectedTab, setSelectedTab] = useState("Overview");
@@ -11,7 +12,7 @@ const Tab = () => {
     "Calendar",
   ];
 
-  const Planning = () => {
+  const Planner = () => {
     return (
       <div>
         <h2>Planning</h2>
@@ -23,18 +24,15 @@ const Tab = () => {
   const Task = () => {
     return (
       <div>
-        <h2>Task Objectif</h2>
-        <p>objectif</p>
+       <p>jgkhjbkn</p>
       </div>
     );
   };
 
   const tabComponents = [
-    <Task />,
-    <Planning />,
-    <ResumeCalendar />,
-    // Ajoutez les composants correspondants pour les autres onglets ici
-    // par exemple: <IntegrationComponent />, <BillingComponent />, etc.
+    <Events/>,
+    <Task/>,
+    <ResumeCalendar />
   ];
 
   return (
@@ -76,7 +74,6 @@ const Tab = () => {
           {item === "Overview" ? tabComponents[0] : null}
           {item === "Planning" ? tabComponents[1] : null}
           {item === "Calendar" ? tabComponents[2] : null}
-          {/* Ajoutez d'autres conditions pour les autres onglets */}
         </Tabs.Content>
       ))}
     </Tabs.Root>

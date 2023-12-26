@@ -7,10 +7,10 @@ import {
 import SignIn from "./components/SignIn";
 import Header from "./components/Header";
 //import Datepicker from "react-tailwindcss-datepicker";
-import { useState } from "react";
 //import DateTimePicker from "react-datetime-picker";
 import Hero from "./components/Hero";
 //import DateTimePicker from "react-tailwindcss-datetimepicker";
+import { useEffect, useState } from "react";
 
 import DateTimePicker from "./components/DateTimePicker";
 import HeadTest from "./components/HeadTest";
@@ -28,6 +28,7 @@ function App() {
   const session = useSession();
   const supabase = useSupabaseClient();
   const { isLoading } = useSessionContext();
+  const [events, setEvents] = useState([]);
 
   if (isLoading) {
     return <></>;
@@ -69,6 +70,7 @@ function App() {
 //   without revolutionary ROI.
 // </p>
 
+  
   return (
     <div className="App">
       {session ? (
@@ -80,6 +82,19 @@ function App() {
           />
           <Modal />
           {/* <TabsDefault/> */}
+
+
+  
+          <div>
+      {events.map((event, idx) => (
+        <div
+          key={idx} value={event.summary} // Assuming the event has a 'summary' property
+        >
+          {event.summary}
+        </div>
+      ))}
+    </div>
+    
 
           <Tab/>
           {/* <Tabs color="indigo"
